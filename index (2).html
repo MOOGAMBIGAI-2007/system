@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parking System Login</title>
+</head>
+<body>
+  <h2>🅿️ Parking System Login</h2>
+  <input type="text" id="username" placeholder="Enter Username">
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="login()">Login</button>
+  <p id="message"></p>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "park" && pass === "1234") {
+        window.location.href = "zones.html"; // ✅ go to vehicle type page
+      } else {
+        document.getElementById("message").innerText = "Invalid Username ❌";
+      }
+    }
+  </script>
+</body>
+</html>
