@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Zone</title>
+</head>
+<body>
+  <h2>Select Zone</h2>
+  <button onclick="goToSlots('Zone 1')">Zone 1</button>
+  <button onclick="goToSlots('Zone 2')">Zone 2</button>
+  <button onclick="goToSlots('Zone 3')">Zone 3</button>
+
+  <script>
+    function goToSlots(zone) {
+      const params = new URLSearchParams(window.location.search);
+      const vehicle = params.get("vehicle");
+      window.location.href = "slots.html?zone=" + encodeURIComponent(zone) + "&vehicle=" + encodeURIComponent(vehicle);
+    }
+  </script>
+</body>
+</html>
