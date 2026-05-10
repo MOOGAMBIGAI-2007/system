@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Vehicle Type</title>
+</head>
+<body>
+  <h2>Select Vehicle Type</h2>
+  <button onclick="goToZones('Two Wheeler')">🚲 Two Wheeler</button>
+  <button onclick="goToZones('Four Wheeler')">🚗 Four Wheeler</button>
+
+  <script>
+    function goToZones(vehicle) {
+      window.location.href = "zones_select.html?vehicle=" + encodeURIComponent(vehicle);
+    }
+  </script>
+</body>
+</html>
