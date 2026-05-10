@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parking Slots</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:#f7f7f7;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .container {
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 0 12px rgba(0,0,0,0.2);
+      text-align:center;
+      width:400px;
+    }
+    h2 {
+      margin-bottom:20px;
+    }
+    .slots {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+      margin-top:20px;
+    }
+    .slot {
+      width:70px;
+      height:70px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-radius:8px;
+      font-weight:bold;
+      cursor:pointer;
+      color:white;
+    }
+    .free {
+      background: #28a745; /* Green */
+    }
+    .occupied {
+      background: #dc3545; /* Red */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Parking Slots</h2>
+    <div class="slots">
+      <div class="slot free" onclick="bookSlot(this)">S1</div>
+      <div class="slot occupied">S2</div>
+      <div class="slot free" onclick="bookSlot(this)">S3</div>
+      <div class="slot occupied">S4</div>
+      <div class="slot free" onclick="bookSlot(this)">S5</div>
+      <div class="slot free" onclick="bookSlot(this)">S6</div>
+      <div class="slot occupied">S7</div>
+      <div class="slot free" onclick="bookSlot(this)">S8</div>
+    </div>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function bookSlot(slot) {
+      if (slot.classList.contains("free")) {
+        slot.classList.remove("free");
+        slot.classList.add("occupied");
+        document.getElementById("message").style.color = "green";
+        document.getElementById("message").innerText = slot.innerText + " booked successfully ✅";
+      } else {
+        document.getElementById("message").style.color = "red";
+        document.getElementById("message").innerText = slot.innerText + " is already occupied ❌";
+      }
+    }
+  </script>
+</body>
+</html>
